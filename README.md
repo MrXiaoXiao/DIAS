@@ -21,14 +21,24 @@ cd DIAS
 
 ## Training
 Pretrained models can be downloaded from: (Will be given after publication) []()
+You can use `--gpu` argument to specifiy gpu. 
+To train a model, first create a configuration file (see example_config.yaml)
+Then run
+```
+python dias_main.py --train --config-file YOUR_CONFIG_PATH
+```
 
 ## Testing
-You can use `--gpu` argument to specifiy gpu. 
+To test, run
+```
+python dias_main.py --test --config-file YOUR_CONFIG_PATH
+```
 
 ### Evaluation
 You can evaluate the model's performance by running script:
-
-## Training
+```
+python dias_main.py --eval --config-file YOUR_CONFIG_PATH
+```
 
 ## Reference
 If you find our work useful for your research, please consider citing:
