@@ -1,0 +1,69 @@
+# Deep-learning-base Ionogram Automatic Scaler Configuration File
+
+# Data Parameters
+Data:
+    BasePath: F:/Ionosonde/Dataset1230/
+    TrainListFile: train.lst
+    TestListFile: test.lst
+    # pad input height to 512
+    PadHeight: 512
+    # pad input width to 512
+    PadWidth: 512
+    # number of input channels
+    ChannelNum: 3 
+    # Number of predicted classes
+    ClassNum: 3
+# Model Parameters
+Model:
+    # Type available params: 'Unet', 'FPN', 'naiveUnet'
+    Type: FPN
+    # Backbone available params: 
+    # VGG 'vgg16' 'vgg19'
+    # ResNet 'resnet18' 'resnet34' 'resnet50' 'resnet101' 'resnet152'
+    # SE-ResNet 'seresnet18' 'seresnet34' 'seresnet50' 'seresnet101' 'seresnet152'
+    # ResNeXt 'resnext50' 'resnext101'
+    # SE-ResNeXt 'seresnext50' 'seresnext101'
+    # SENet154 'senet154'
+    # DenseNet 'densenet121' 'densenet169' 'densenet201'
+    # Inception 'inceptionv3' 'inceptionresnetv2'
+    # MobileNet 'mobilenet' 'mobilenetv2'
+    # EfficientNet 'efficientnetb0' 'efficientnetb1' 'efficientnetb2' 'efficientnetb3' 'efficientnetb4' 'efficientnetb5' efficientnetb6' efficientnetb7'
+    Backbone: resnet50
+    # BackboneWeights available params:
+    # None imagenet
+    BackboneWeights: None
+    # Number of pyramid block filters
+    PyramidBlockFilters: 256
+    # optimizer
+    Optimizer: RAdam
+    # Learning rate
+    LearningRate: 0.001
+    # Loss function available params:
+    # bce (Binary Cross Entropy)
+    # dice
+    # BinaryFocalLoss
+    Loss: dice
+    # Evalute metric available params:
+    # IoU
+    # F_score
+    Metric: F_score
+
+Train:
+    # total training step
+    TotalStep: 160000
+    # print interval
+    PrintInterval: 100
+    # model save step
+    SaveInterval: 2000
+    # test img plot interval
+    PlotInterval: 2000
+    # img save dir
+    ImgSaveDir: ./imgs/
+    # model save dir
+    ModelSaveDir: ./saved_model/
+    HistLogDir: ./ 
+
+Test:
+    ModelPath: ./model
+    PostProcess: None
+    SavePath: ./save
