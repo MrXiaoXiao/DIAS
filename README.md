@@ -3,13 +3,18 @@ by Zhuowei Xiao, Jian Wang, Juan Li, Biqiang Zhao, Lianhuan Hu and Libo Liu
 
 Code for paper 'Deep-learning for Ionogram Automatic Scaling'
 
+## Dataset
 Link to dataset: (Will be given after publication).
+If you want to use your own data, first use 'ReadGRM.m' matlab script (Will be given after publication) to read data.
+Then use provided python script (Will be given after publication) to change data into desired format.
 
 ## Prerequisites
 - Python3.6
 - Tensorflow2
 - Segmentation-Models
 - PyYaml
+(If you are not familiar with python, we suggest you to used Anaconda to install these prerequisites.)
+
 
 ## Installation
 Clone this project to your machine. 
