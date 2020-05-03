@@ -1,6 +1,5 @@
 # Deep-learning for Ionogram Automatic Scaling
 by Zhuowei Xiao, Jian Wang, Juan Li, Biqiang Zhao, Lianhuan Hu and Libo Liu
-Deep-learning for Ionogram Automatic Scaling
 
 Code for paper 'Deep-learning for Ionogram Automatic Scaling'
 
