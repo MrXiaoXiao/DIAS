@@ -21,14 +21,9 @@ cd DIAS
 ```
 
 ## Training
-
 Pretrained models can be downloaded from []()
 
 ## Testing
-```bash
-python run_model.py --input_path=./testing_set --output_path=./testing_res
-```
-
 You can use `--gpu` argument to specifiy gpu. 
 
 ### Evaluation
@@ -36,20 +31,8 @@ You can evaluate the model's performance by running script:
 
 ## Training
 
-We trained our model using the dataset from 
-[DeepDeblur_release](https://github.com/SeungjunNah/DeepDeblur_release). 
-Please put the dataset into `training_set/`. And the provided `datalist_gopro.txt` 
-can be used to train the model. 
-
-Hyper parameters such as batch size, learning rate, epoch number can be tuned through command line:
-
-```bash
-python run_model.py --phase=train --batch=16 --lr=1e-4 --epoch=4000
-```
-
-
 ## Reference
-If you use any part of our code, or SRN-Deblur is useful for your research, please consider citing:
+If you find our work useful for your research, please consider citing:
 (Will be given after publication)
 
 
