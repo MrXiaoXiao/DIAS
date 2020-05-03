@@ -4,7 +4,7 @@ Deep-learning for Ionogram Automatic Scaling
 
 Code for paper 'Deep-learning for Ionogram Automatic Scaling'
 
-Link to dataset will be given below after publication.
+Link to dataset: (Will be given after publication).
 
 ## Prerequisites
 - Python3.6
@@ -21,7 +21,7 @@ cd DIAS
 ```
 
 ## Training
-Pretrained models can be downloaded from []()
+Pretrained models can be downloaded from: (Will be given after publication) []()
 
 ## Testing
 You can use `--gpu` argument to specifiy gpu. 
