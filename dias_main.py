@@ -5,6 +5,7 @@ import argparse
 
 from dias.train import train
 from dias.test import test
+from dias.eval import eval
 # add evalute module to main
 
 def dias_main(args):
@@ -32,6 +33,13 @@ def dias_main(args):
         print('Setting Tester')
         test(cfgs)
         print('Done Testing')
+        return
+    
+    # evaluate
+    if args.run_eval:
+        print('Start Evaluation')
+        eval(cfgs)
+        print('Done Evaluation')
         return
     
     return

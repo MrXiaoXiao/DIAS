@@ -1,5 +1,9 @@
 import numpy as np
 
+def eval(cfgs):
+    calculate_params(cfgs['res_mat_path'])
+    return
+
 def calculate_params(res_mat):
     layerList = ['E','F1','F2']
     res_dict = dict()
