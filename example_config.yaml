@@ -58,10 +58,10 @@ Train:
     # test img plot interval
     PlotInterval: 1000
     # img save dirs's
-    ImgSaveDir: /home/Public/SmartRadarAssistant/DIonoAutoScaler/FPN_compare/Res50FPN/imgs/
+    ImgSaveDir: ./vis_imgs/
     # model save dir
-    ModelSaveDir: /home/Public/SmartRadarAssistant/DIonoAutoScaler/FPN_compare/Res50FPN/models/
-    HistLogDir: /home/Public/SmartRadarAssistant/DIonoAutoScaler/FPN_compare/Res50FPN/
+    ModelSaveDir: ./models/
+    HistLogDir: ./models/
 
 Test:
     ModelPath: ./model
