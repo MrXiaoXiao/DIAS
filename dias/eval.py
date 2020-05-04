@@ -1,7 +1,7 @@
 import numpy as np
 
 def eval(cfgs):
-    calculate_params(cfgs['res_mat_path'])
+    calculate_params(cfgs['Eval']['ResultPath'])
     return
 
 def calculate_params(res_mat):

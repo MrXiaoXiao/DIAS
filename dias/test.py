@@ -18,25 +18,26 @@ def test(cfgs):
 
     dataManager = IonoDataManager(cfgs)
     all_test_num = len(dataManager.test_data_list)
-    for idx in range(all_test_num):
-        print('On {}'.format(idx))
-        test_data, human_res, artist_res = dataManager.get_test_batch(idx)
-        Dias_res = model.predict(test_data)
-        res_mat = (test_data, human_res, artist_res,Dias_res)
-        np.save(cfgs['Test']['SavePath']+'TEST_{}.npy'.format(idx),res_mat)
 
-    """
-    res_mat = np.zeros([len(dataManager.test_data_list),3,6])
-    
-    for idx in range(len(dataManager.test_data_list)):
-        test_data, human_res, artist_res = dataManager.get_test_batch(idx)
-        Dias_res = model.predict(test_data)
-        res_mat[idx,:,0:2] = get_minH_maxF(human_res)
-        res_mat[idx,:,2:4] = get_minH_maxF(artist_res)
-        res_mat[idx,:,4:6] = get_minH_maxF(Dias_res)
-        if idx%100==0:
-            print(res_mat[idx,:])
-    """
-    #np.save(cfgs['Test']['SavePath'],res_mat)
+    if cfgs['Test']['TestSave'] == 'OnlyMinHMaxF':
+        res_mat = np.zeros([len(dataManager.test_data_list),3,6])
+        for idx in range(len(dataManager.test_data_list)):
+            test_data, human_res, artist_res = dataManager.get_test_batch(idx)
+            Dias_res = model.predict(test_data)
+            res_mat[idx,:,0:2] = get_minH_maxF(human_res)
+            res_mat[idx,:,2:4] = get_minH_maxF(artist_res)
+            res_mat[idx,:,4:6] = get_minH_maxF(Dias_res)
+            if idx%100==0:
+                print(res_mat[idx,:])
+        np.save(cfgs['Test']['SavePath'],res_mat)
+    elif cfgs['Test']['TestSave'] == 'AllOutput':
+        for idx in range(all_test_num):
+            print('On {}'.format(idx))
+            test_data, human_res, artist_res = dataManager.get_test_batch(idx)
+            Dias_res = model.predict(test_data)
+            res_mat = (test_data, human_res, artist_res,Dias_res)
+            np.save(cfgs['Test']['SavePath']+'TEST_{}.npy'.format(idx),res_mat)
+    else:
+        print('Please choose a vaild TestSave Option')
     
     return

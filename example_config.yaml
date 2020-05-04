@@ -64,6 +64,8 @@ Train:
     HistLogDir: ./models/
 
 Test:
+    # Options: [OnlyMinHMaxF] [AllOutput]
+    TestSave: OnlyMinHMaxF
     ModelPath: ./model
     PostProcess: None
     SavePath: ./save
