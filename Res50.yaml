@@ -1,4 +1,4 @@
-## Deep-learning-base Ionogram Automatic Scaler Configuration File
+# Deep-learning-base Ionogram Automatic Scaler Configuration File
 
 # Data Parameters
 Data:
@@ -13,7 +13,6 @@ Data:
     ChannelNum: 3 
     # Number of predicted classes
     ClassNum: 3
-
 # Model Parameters
 Model:
     Type: FPN
@@ -62,11 +61,3 @@ Train:
     # model save dir
     ModelSaveDir: /home/Public/SmartRadarAssistant/DIonoAutoScaler/FPN_compare/Res50FPN/models/
     HistLogDir: /home/Public/SmartRadarAssistant/DIonoAutoScaler/FPN_compare/Res50FPN/
-
-Test:
-    ModelPath: ./model
-    PostProcess: None
-    SavePath: ./save
-
-Eval:
-    ResultPath: ./res.npy
