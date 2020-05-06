@@ -4,7 +4,7 @@ by Zhuowei Xiao, Jian Wang, Juan Li, Biqiang Zhao, Lianhuan Hu and Libo Liu
 Code for paper 'Deep-learning for Ionogram Automatic Scaling'
 
 ## Dataset
-Link to dataset: (Will be given after publication).
+Link to dataset: [here](www.geophys.ac.cn/ArticleDataInfo.asp?MetaId=205)
 If you want to use your own data, you may first use 'GRM2HourlyRSF.m' and 'saveSAO2mat.m' matlab scripts to extract ionograms from GRM data.
 Then use provided python script (Will be given after publication) to change data into desired format.
 
