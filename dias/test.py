@@ -29,7 +29,8 @@ def test(cfgs):
             res_mat[idx,:,4:6] = get_minH_maxF(Dias_res)
             if idx%100==0:
                 print(res_mat[idx,:])
-        np.save(cfgs['Test']['SavePath'],res_mat)
+        np.save(cfgs['Test']['SavePath']+'MinHMaxF.npy',res_mat)
+    
     elif cfgs['Test']['TestSave'] == 'AllOutput':
         for idx in range(all_test_num):
             print('On {}'.format(idx))

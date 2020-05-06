@@ -1,7 +1,8 @@
 import numpy as np
 
 def eval(cfgs):
-    calculate_params(cfgs['Eval']['ResultPath'])
+    res_mat = np.load(cfgs['Eval']['ResultPath'],allow_pickle=True)
+    calculate_params(res_mat)
     return
 
 def calculate_params(res_mat):
@@ -71,11 +72,6 @@ def calculate_params(res_mat):
             else:
                 res_dict[layer]['Dias_FalsePositiveNum'] += 1
 
-            if human_flag and dias_flag and art_flag:
-                if idx < 2600:
-                    print(idx)
-                    print(np.abs(human_hmin - dias_hmin),np.abs(human_fmax - dias_fmax))
-                    print(np.abs(human_hmin - art_hmin),np.abs(human_fmax - art_fmax))
     AVG_ART_minH_abs_dev_up = 0
     AVG_ART_minH_abs_dev_down = 0
     AVG_ART_maxF_abs_dev_up = 0
@@ -138,7 +134,8 @@ def calculate_params(res_mat):
             for key in res_dict[layerKey].keys():
                 if 'Dias' in key:
                     print('Layer {:}   {:}:   {:.4f}'.format(layerKey, key,res_dict[layerKey][key]))
-    
+                elif 'ART' in key:
+                    print('Layer {:}   {:}:   {:.4f}'.format(layerKey, key,res_dict[layerKey][key]))
     return res_dict
 
 if __name__ == '__main__':

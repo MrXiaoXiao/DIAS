@@ -19,7 +19,7 @@ def dias_main(args):
     os.environ['CUDA_VISIBLE_DEVICES'] = '{}'.format(args.gpu_id)
 
     # check if train or test
-    if not (args.run_train or args.run_test):
+    if not (args.run_train or args.run_test or args.run_eval):
         print ('Please set one of the options --train | --test')
         parser.print_help()
         return
@@ -53,7 +53,7 @@ if __name__ == '__main__':
     parser.add_argument('--config-file', dest='config_file', type=str, help='Experiment configuration file')
     parser.add_argument('--train', dest='run_train', action='store_true', default=False, help='Launch training')
     parser.add_argument('--test', dest='run_test', action='store_true', default=False, help='Launch testing on a list of Ionograms')
-    parser.add_argument('--evaluate', dest='run_eval', action='store_true', default=False, help='Launch evaluation on a list of Ionograms')
+    parser.add_argument('--eval', dest='run_eval', action='store_true', default=False, help='Launch evaluation on a list of Ionograms')
     parser.add_argument('--gpuid',dest='gpu_id',type=int, default=0, help='Run On a certain GPU')
 
     args = parser.parse_args()
