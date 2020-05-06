@@ -5,7 +5,7 @@ Code for paper 'Deep-learning for Ionogram Automatic Scaling'
 
 ## Dataset
 Link to dataset: (Will be given after publication).
-If you want to use your own data, first use 'ReadGRM.m' matlab script (Will be given after publication) to read data.
+If you want to use your own data, you may first use 'GRM2HourlyRSF.m' and 'saveSAO2mat.m' matlab scripts to extract ionograms from GRM data.
 Then use provided python script (Will be given after publication) to change data into desired format.
 
 ## Prerequisites
@@ -30,13 +30,13 @@ You can use `--gpu` argument to specifiy gpu.
 To train a model, first create a configuration file (see example_config.yaml)
 Then run
 ```
-python dias_main.py --train --config-file YOUR_CONFIG_PATH
+python dias_main.py --train --gpu_id 0 --config-file YOUR_CONFIG_PATH
 ```
 
 ## Testing
 To test, run
 ```
-python dias_main.py --test --config-file YOUR_CONFIG_PATH
+python dias_main.py --test --gpu_id 0 --config-file YOUR_CONFIG_PATH
 ```
 
 ### Evaluation
