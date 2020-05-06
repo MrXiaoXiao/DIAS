@@ -13,6 +13,7 @@ Then use provided python script (Will be given after publication) to change data
 - Tensorflow2
 - Segmentation-Models
 - PyYaml
+
 (If you are not familiar with python, we suggest you to used Anaconda to install these prerequisites.)
 
 
