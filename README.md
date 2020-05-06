@@ -54,4 +54,4 @@ If you find our work useful for your research, please consider citing:
 
 
 ## Contact
-If you have any suggestions and questions, please send email to jianwang@mail.iggcas.ac.cn or xiaozhuowei@mail.iggcas.ac.cn    
+If you have any questions, please send email to jianwang@mail.iggcas.ac.cn or xiaozhuowei@mail.iggcas.ac.cn    
