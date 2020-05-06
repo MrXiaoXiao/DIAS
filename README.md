@@ -15,7 +15,7 @@ Then use provided python script (Will be given after publication) to change data
 - [Segmentation-Models](https://github.com/qubvel/segmentation_models)
 - [PyYaml](https://pyyaml.org/)
 
-(If you are not familiar with python, we suggest you to used [Anaconda](https://www.anaconda.com
+(If you are not familiar with python, we suggest you to use [Anaconda](https://www.anaconda.com
 ) to install these prerequisites.)
 
 
