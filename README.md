@@ -9,10 +9,10 @@ If you want to use your own data, you may first use 'GRM2HourlyRSF.m' and 'saveS
 Then use provided python script (Will be given after publication) to change data into desired format.
 
 ## Prerequisites
-- Python3.6
-- Tensorflow2
-- Segmentation-Models
-- PyYaml
+- [Python3.6](https://www.python.org)
+- [Tensorflow2](https://www.tensorflow.org)
+- [Segmentation-Models](https://github.com/qubvel/segmentation_models)
+- [PyYaml](https://pyyaml.org/)
 
 (If you are not familiar with python, we suggest you to used Anaconda to install these prerequisites.)
 
