@@ -69,6 +69,7 @@ Test:
     ModelPath: ./model
     PostProcess: None
     SavePath: ./save
+    Threshold: 0.3
 
 Eval:
     ResultPath: ./res.npy

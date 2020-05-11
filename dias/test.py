@@ -10,27 +10,31 @@ import os
 
 def test(cfgs):
     print('Setting Model...')
+    # set up model
     if cfgs['Model']['Type'] == 'Unet' or cfgs['Model']['Type'] == 'naiveUnet':
         model = Dias_Unet(cfgs)
     elif cfgs['Model']['Type'] == 'FPN':
         model = Dias_FPN(cfgs)
     model.load_weights(cfgs['Test']['ModelPath'])
 
+    threshold = float(cfgs['Test']['Threshold'])
+    # set up dataset
     dataManager = IonoDataManager(cfgs)
     all_test_num = len(dataManager.test_data_list)
 
+    # if only save MinH and MaxF
     if cfgs['Test']['TestSave'] == 'OnlyMinHMaxF':
         res_mat = np.zeros([len(dataManager.test_data_list),3,6])
         for idx in range(len(dataManager.test_data_list)):
             test_data, human_res, artist_res = dataManager.get_test_batch(idx)
             Dias_res = model.predict(test_data)
-            res_mat[idx,:,0:2] = get_minH_maxF(human_res)
-            res_mat[idx,:,2:4] = get_minH_maxF(artist_res)
-            res_mat[idx,:,4:6] = get_minH_maxF(Dias_res)
+            res_mat[idx,:,0:2] = get_minH_maxF(human_res,threshold)
+            res_mat[idx,:,2:4] = get_minH_maxF(artist_res,threshold)
+            res_mat[idx,:,4:6] = get_minH_maxF(Dias_res,threshold)
             if idx%100==0:
                 print(res_mat[idx,:])
         np.save(cfgs['Test']['SavePath']+'MinHMaxF.npy',res_mat)
-    
+    # if save All outputs of the model
     elif cfgs['Test']['TestSave'] == 'AllOutput':
         for idx in range(all_test_num):
             print('On {}'.format(idx))

@@ -6,7 +6,6 @@ import argparse
 from dias.train import train
 from dias.test import test
 from dias.eval import eval
-# add evalute module to main
 
 def dias_main(args):
     """

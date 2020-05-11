@@ -1,11 +1,13 @@
 import numpy as np
 
 def eval(cfgs):
+    # evaluate precision, recall rate, F-score, D-MCF, D-MEH
     res_mat = np.load(cfgs['Eval']['ResultPath'],allow_pickle=True)
     calculate_params(res_mat)
     return
 
 def calculate_params(res_mat):
+    # evaluate precision, recall rate, F-score, D-MCF, D-MEH
     layerList = ['E','F1','F2']
     res_dict = dict()
     for layer in layerList:
@@ -139,5 +141,6 @@ def calculate_params(res_mat):
     return res_dict
 
 if __name__ == '__main__':
+    # test evaluation
     res_mat = np.load('./test.npy')
     res = calculate_params(res_mat)
