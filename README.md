@@ -7,7 +7,7 @@ Code for paper 'Deep-learning for Ionogram Automatic Scaling'
 **link to dataset**: [here.](http://www.geophys.ac.cn/ArticleDataInfo.asp?MetaId=205)
 
 If you want to use your own data, you may first use 'GRM2HourlyRSF.m' and 'saveSAO2mat.m' matlab scripts to extract ionograms from GRM data.
-Then use provided python script (Will be given after publication) to change data into desired format.
+Then you may refer to jupyter notebook 'ConvertMat2PickleData.ipynb' under folder 'convert_GRM_to_input' to change data into desired format.
 
 ## Prerequisites
 - [Python3.6](https://www.python.org)
