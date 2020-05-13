@@ -38,10 +38,16 @@ def test(cfgs):
     elif cfgs['Test']['TestSave'] == 'AllOutput':
         for idx in range(all_test_num):
             print('On {}'.format(idx))
-            test_data, human_res, artist_res = dataManager.get_test_batch(idx)
-            Dias_res = model.predict(test_data)
-            res_mat = (test_data, human_res, artist_res,Dias_res)
-            np.save(cfgs['Test']['SavePath']+'TEST_{}.npy'.format(idx),res_mat)
+            if cfgs['Test']['ScaleOnly']:
+                test_data = dataManager.get_scale_only(idx)
+                Dias_res = model.predict(test_data)
+                res_mat = (test_data,Dias_res)
+                np.save(cfgs['Test']['SavePath']+'TEST_{}.npy'.format(idx),res_mat)
+            else:
+                test_data, human_res, artist_res = dataManager.get_test_batch(idx)
+                Dias_res = model.predict(test_data)
+                res_mat = (test_data, human_res, artist_res,Dias_res)
+                np.save(cfgs['Test']['SavePath']+'TEST_{}.npy'.format(idx),res_mat)
     else:
         print('Please choose a vaild TestSave Option')
     

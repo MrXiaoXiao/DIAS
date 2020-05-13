@@ -94,6 +94,26 @@ class IonoDataManager():
 
         return x_test, y_test, art_test
 
+    def get_scale_only(self, id):
+        """get train batch
+        """
+        #print(len(self.train_data_list))
+        #rand_id = int(np.random.randint(low=0,high=len(self.train_data_list),size=1))
+        rand_id = id
+        x_test= np.zeros([1,self.pad_height,self.pad_height,self.channel_num])
+        ori_x_name = self.base_path + self.test_data_list[rand_id].split(' ')[0][:-1] 
+
+        t_file = open(ori_x_name,'rb')
+        ori_x = pickle.load(t_file)
+        t_file.close()
+
+        ori_height = np.shape(ori_x)[0]
+        ori_width = np.shape(ori_x)[1]
+        x_test[0,:ori_height,:ori_width,0] = ori_x[:,:,0]/np.max(ori_x[:,:,0])
+        x_test[0,:ori_height,:ori_width,1] = ori_x[:,:,1]/np.max(ori_x[:,:,1])
+        x_test[0,:ori_height,:ori_width,2] = ori_x[:,:,2]/np.max(ori_x[:,:,2])
+
+        return x_test
 
 
 if __name__ == '__main__':

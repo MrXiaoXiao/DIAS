@@ -2,9 +2,9 @@
 
 # Data Parameters
 Data:
-    BasePath: ./dataset/
-    TrainListFile: train.lst
-    TestListFile: test.lst
+    BasePath: F:/Ionosonde/
+    TrainListFile: test_data.lst
+    TestListFile: test_data.lst
     # pad input height to 512
     PadHeight: 512
     # pad input width to 512
@@ -65,11 +65,12 @@ Train:
 
 Test:
     # Options: [OnlyMinHMaxF] [AllOutput]
-    TestSave: OnlyMinHMaxF
-    ModelPath: ./model
+    TestSave: AllOutput
+    ModelPath: F:/Ionosonde/models/STEP_158000.model
     PostProcess: None
-    SavePath: ./save
+    SavePath: F:/Ionosonde/models/
     Threshold: 0.3
+    ScaleOnly: True
 
 Eval:
     ResultPath: ./res.npy
