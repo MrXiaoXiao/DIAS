@@ -35,7 +35,6 @@ cd DIAS
 ```
 
 ## Training
-Pretrained models can be downloaded from: (Will be given after publication) []()
 You can use `--gpu` argument to specifiy gpu. 
 To train a model, first create a configuration file (see example_config.yaml)
 Then run
