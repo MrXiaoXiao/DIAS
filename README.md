@@ -57,7 +57,7 @@ python dias_main.py --eval --config-file YOUR_CONFIG_PATH
 
 ## Reference
 If you find our work useful for your research, please consider citing:
-(Will be given after publication)
+Zhuowei Xiao, Jian Wang*, Juan Li, Biqiang Zhao, Lianhuan Hu, Libo Liu. Deep learning for Ionogram Automatic Scaling. 2020. Advances in Space Research. https://doi.org/10.1016/j.asr.2020.05.009.
 
 
 ## Contact
