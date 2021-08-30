@@ -12,7 +12,6 @@ Google Drive [here.](https://drive.google.com/file/d/109BTXlLsxSE_5LSV8SWxlggOZH
 
 Baiduyun [here](https://pan.baidu.com/s/1BXr_zVxLHG2SdOcv43QWSw) Code: 2ftt
 
-
 If you want to use your own data, you may first use 'GRM2HourlyRSF.m' and 'saveSAO2mat.m' matlab scripts to extract ionograms from GRM data.
 Then you may refer to jupyter notebooks under folder 'convert_GRM_to_input' to change data into desired format.
 
@@ -41,6 +40,7 @@ Then run
 ```
 python dias_main.py --train --gpu_id 0 --config-file YOUR_CONFIG_PATH
 ```
+Tips: According to feedback that certain implementations of RAdam optimizer have problems in training convergence in this program, switch to Adam optimizer can solve the problem.
 
 ## Testing
 To test, run
