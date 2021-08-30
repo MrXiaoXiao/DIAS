@@ -3,8 +3,8 @@
 # Data Parameters
 Data:
     BasePath: F:/Ionosonde/
-    TrainListFile: test_data.lst
-    TestListFile: test_data.lst
+    TrainListFile: train.lst
+    TestListFile: test.lst
     # pad input height to 512
     PadHeight: 512
     # pad input width to 512
@@ -34,10 +34,10 @@ Model:
     BackboneWeights: None
     # Number of pyramid block filters
     PyramidBlockFilters: 256
-    # optimizer
-    Optimizer: RAdam
+    # optimizer: Adam RAdam SGD
+    Optimizer: Adam
     # Learning rate
-    LearningRate: 0.001
+    LearningRate: 0.0001
     # Loss function available params:
     # bce (Binary Cross Entropy)
     # dice
