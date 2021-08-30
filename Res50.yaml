@@ -34,9 +34,9 @@ Model:
     # Number of pyramid block filters
     PyramidBlockFilters: 256
     # optimizer
-    Optimizer: RAdam
+    Optimizer: Adam
     # Learning rate
-    LearningRate: 0.001
+    LearningRate: 0.0001
     # Loss function available params:
     # bce (Binary Cross Entropy)
     # dice
